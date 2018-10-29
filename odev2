@@ -1,0 +1,51 @@
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+class tabloOrnegi(QDialog):
+    def __init__(self,ebeveyn=None):
+        super(tabloOrnegi,self).__init__(ebeveyn)
+        grid=QGridLayout()
+        self.tablo=QTableWidget()
+        self.tablo.resize(500,200)
+        self.tablo.setRowCount(14)
+        self.tablo.setColumnCount(2)
+        grid.addWidget(self.tablo)
+        item=QTableWidgetItem()
+        item.setData(Qt.EditRole,"Aylar")
+        self.tablo.setItem(0,0,QTableWidgetItem(item))
+        self.tablo.setItem(0,1,QTableWidgetItem("Personel Sayısı"))
+        self.tablo.setItem(1,0,QTableWidgetItem("Ocak"))
+        self.tablo.setItem(1,1,QTableWidgetItem("10"))
+        self.tablo.setItem(2,0,QTableWidgetItem("Şubat"))
+        self.tablo.setItem(2,1,QTableWidgetItem("8"))
+        self.tablo.setItem(3,0,QTableWidgetItem("Mart"))
+        self.tablo.setItem(3,1,QTableWidgetItem("7"))
+        self.tablo.setItem(4,0,QTableWidgetItem("Nisan"))
+        self.tablo.setItem(4,1,QTableWidgetItem("6"))
+        self.tablo.setItem(5,0,QTableWidgetItem("Mayıs"))
+        self.tablo.setItem(5,1,QTableWidgetItem("11"))
+        self.tablo.setItem(6,0,QTableWidgetItem("Haziran"))
+        self.tablo.setItem(6,1,QTableWidgetItem("12"))
+        self.tablo.setItem(7,0,QTableWidgetItem("Temmuz"))
+        self.tablo.setItem(7,1,QTableWidgetItem("15"))
+        self.tablo.setItem(8,0,QTableWidgetItem("Ağustos"))
+        self.tablo.setItem(8,1,QTableWidgetItem("20"))
+        self.tablo.setItem(9,0,QTableWidgetItem("Eyül"))
+        self.tablo.setItem(9,1,QTableWidgetItem("30"))
+        self.tablo.setItem(10,0,QTableWidgetItem("Ekim"))
+        self.tablo.setItem(10,1,QTableWidgetItem("40"))
+        self.tablo.setItem(11,0,QTableWidgetItem("Kasım"))
+        self.tablo.setItem(11,1,QTableWidgetItem("50"))
+        self.tablo.setItem(12,0,QTableWidgetItem("Aralık"))
+        self.tablo.setItem(12,1,QTableWidgetItem("60"))
+        self.tablo.setItem(13,0,QTableWidgetItem("Ortalama Personel Sayısı"))
+        self.tablo.setItem(13,1,QTableWidgetItem("22,42"))  #çıkarılan işçi/22,42*100 şeklinde hesaplanır bu yüzden inputla çıkarılan işçi sayısı oluşturulur.
+        self.tablo.show()
+        return uyg.exec_()
+class tabloListeOrnegi(QDialog):
+    def __init__(self,ebeveyn=None):
+        super(tabloOrnegi,self).__init__(ebeveyn)
+uyg=QApplication([])
+pencere=tabloOrnegi()
+pencere.show()
+uyg.exec_
+        
